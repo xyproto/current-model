@@ -1,0 +1,46 @@
+.TH current-model 1 "September 2024" "version 1.0.0" "current-model utility"
+.SH NAME
+current-model \- a utility to select and query models for specific tasks
+.SH SYNOPSIS
+.B current-model
+[\-\-help] [\-\-version] [show | set <task> <model> | <task>]
+.SH DESCRIPTION
+.B current-model
+is a tool to configure and retrieve models for various tasks, using a configuration file located at /etc/current-model.conf.
+The tool supports listing all configured models, retrieving the model for a specific task, and setting a model for a task.
+.SH OPTIONS
+.TP
+.B \-\-help
+Show the help message and exit.
+.TP
+.B \-\-version
+Show the version of the utility and exit.
+.SH COMMANDS
+.TP
+.B show
+Display all task-to-model mappings.
+.TP
+.B <task>
+Retrieve the model for a specific task, e.g., \fBcurrent-model codegen\fR.
+.TP
+.B set <task> <model>
+Set or update the model for a specific task, e.g., \fBcurrent-model set codegen llama3.1:latest\fR.
+.SH EXAMPLES
+Retrieve the model for the task "codegen":
+.RS
+.B current-model codegen
+.RE
+Set the model for the task "codegen" to "llama3.1:latest":
+.RS
+.B sudo current-model set codegen llama3.1:latest
+.RE
+.SH CONFIGURATION FILE
+The configuration file is located at /etc/current-model.conf and stores mappings between tasks and models.
+Each line should follow the format:
+.RS
+.B task=model:version
+.RE
+.SH AUTHOR
+Written by [Your Name].
+.SH SEE ALSO
+.B current-model.conf(5)

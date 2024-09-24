@@ -18,19 +18,19 @@ make
 
 On Arch Linux, you will need the zig package installed. On macOS, install zig via Homebrew:
 
-bash```
+```bash
 brew install zig
 ```
 
 Once built, you can install the utility by copying the binary to /usr/bin:
 
-bash```
+```bash
 sudo install -Dm644 current-model /usr/bin/current-model
 ```
 
 Or on BSD or macOS (use `doas` or `sudo` if needed):
 
-bash```
+```bash
 install -m644 current-model /usr/local/bin/current-model
 ```
 
@@ -38,31 +38,31 @@ install -m644 current-model /usr/local/bin/current-model
 
 Get the model for a specific task:
 
-bash```
+```bash
 current-model <task>
 ```
 
 Example:
 
-bash```
+```bash
 current-model codegen
 ```
 
 Set the model for a task:
 
-bash```
+```bash
 sudo current-model set <task> <model>
 ```
 
 Example:
 
-bash```
+```bash
 sudo current-model set codegen llama3.1:latest
 ```
 
 List all task-to-model mappings:
 
-bash```
+```bash
 current-model show
 ```
 
@@ -70,7 +70,7 @@ current-model show
 
 The configuration file is located at /etc/current-model.conf. Example:
 
-ini```
+```ini
 chat=gemma2:latest
 codegen=qwen2.5:32b
 imagedesc=llava:latest

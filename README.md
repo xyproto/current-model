@@ -1,5 +1,7 @@
 # current-model
 
+# THIS IS A WORK IN PROGRESS!
+
 `current-model` is a lightweight utility to configure and query models for various tasks. It reads from `/etc/current-model.conf`, which stores task-to-model mappings.
 
 ## Features
